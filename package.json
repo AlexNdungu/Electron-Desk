@@ -1,0 +1,17 @@
+{
+  "name": "electron-desk",
+  "productName": "Electron Desk",
+  "version": "1.0.0",
+  "description": "First App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Alex Meta",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^26.1.0",
+    "resize-img": "^2.0.0",
+    "toastify-js": "^1.12.0"
+  }
+}
