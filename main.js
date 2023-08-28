@@ -3,7 +3,7 @@ const os = require('os');
 const fs = require('fs');
 const resizeImg = require('resize-img');
 const { app, BrowserWindow, Menu, ipcMain, shell } = require('electron');
-const isDev = process.env.NODE_ENV !== 'development';
+const isDev = process.env.NODE_ENV !== 'production';
 
 let mainWindow;
 
