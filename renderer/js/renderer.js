@@ -6,34 +6,34 @@ const heightInput = document.querySelector('#height');
 const widthInput = document.querySelector('#width');
 
 // // Load image and show form
-// function loadImage(e) {
-//   const file = e.target.files[0];
+function loadImage(e) {
+  const file = e.target.files[0];
 
-//   // Check if file is an image
-//   if (!isFileImage(file)) {
-//     alertError('Please select an image');
-//     return;
-//   }
+  // Check if file is an image
+  if (!isFileImage(file)) {
+    alertError('Please select an image');
+    return;
+  }
 
-//   // Add current height and width to form using the URL API
-//   const image = new Image();
-//   image.src = URL.createObjectURL(file);
-//   image.onload = function () {
-//     widthInput.value = this.width;
-//     heightInput.value = this.height;
-//   };
+  // Add current height and width to form using the URL API
+  const image = new Image();
+  image.src = URL.createObjectURL(file);
+  image.onload = function () {
+    widthInput.value = this.width;
+    heightInput.value = this.height;
+  };
 
-//   // Show form, image name and output path
-//   form.style.display = 'block';
-//   filename.innerHTML = img.files[0].name;
-//   outputPath.innerText = path.join(os.homedir(), 'imageresizer');
-// }
+  // Show form, image name and output path
+  form.style.display = 'block';
+  filename.innerHTML = img.files[0].name;
+  outputPath.innerText = path.join(os.homedir(), 'imageresizer');
+}
 
-// // Make sure file is an image
-// function isFileImage(file) {
-//   const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
-//   return file && acceptedImageTypes.includes(file['type']);
-// }
+// Make sure file is an image
+function isFileImage(file) {
+  const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
+  return file && acceptedImageTypes.includes(file['type']);
+}
 
 // // Resize image
 // function resizeImage(e) {
@@ -92,9 +92,9 @@ const widthInput = document.querySelector('#width');
 //   });
 // }
 
-// // File select listener
-// img.addEventListener('change', loadImage);
-// // Form submit listener
-// form.addEventListener('submit', resizeImage);
+// File select listener
+img.addEventListener('change', loadImage);
+// Form submit listener
+form.addEventListener('submit', resizeImage);
 
 
