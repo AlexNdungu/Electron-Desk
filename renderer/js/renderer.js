@@ -66,31 +66,31 @@ function isFileImage(file) {
 //   alertSuccess(`Image resized to ${heightInput.value} x ${widthInput.value}`)
 // );
 
-// function alertSuccess(message) {
-//   Toastify.toast({
-//     text: message,
-//     duration: 5000,
-//     close: false,
-//     style: {
-//       background: 'green',
-//       color: 'white',
-//       textAlign: 'center',
-//     },
-//   });
-// }
+function alertSuccess(message) {
+  Toastify.toast({
+    text: message,
+    duration: 5000,
+    close: false,
+    style: {
+      background: 'green',
+      color: 'white',
+      textAlign: 'center',
+    },
+  });
+}
 
-// function alertError(message) {
-//   Toastify.toast({
-//     text: message,
-//     duration: 5000,
-//     close: false,
-//     style: {
-//       background: 'red',
-//       color: 'white',
-//       textAlign: 'center',
-//     },
-//   });
-// }
+function alertError(message) {
+  Toastify.toast({
+    text: message,
+    duration: 5000,
+    close: false,
+    style: {
+      background: 'red',
+      color: 'white',
+      textAlign: 'center',
+    },
+  });
+}
 
 // File select listener
 img.addEventListener('change', loadImage);
