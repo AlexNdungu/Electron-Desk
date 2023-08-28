@@ -35,36 +35,36 @@ function isFileImage(file) {
   return file && acceptedImageTypes.includes(file['type']);
 }
 
-// // Resize image
-// function resizeImage(e) {
-//   e.preventDefault();
+// Resize image
+function resizeImage(e) {
+  e.preventDefault();
 
-//   if (!img.files[0]) {
-//     alertError('Please upload an image');
-//     return;
-//   }
+  if (!img.files[0]) {
+    alertError('Please upload an image');
+    return;
+  }
 
-//   if (widthInput.value === '' || heightInput.value === '') {
-//     alertError('Please enter a width and height');
-//     return;
-//   }
+  if (widthInput.value === '' || heightInput.value === '') {
+    alertError('Please enter a width and height');
+    return;
+  }
 
-//   // Electron adds a bunch of extra properties to the file object including the path
-//   const imgPath = img.files[0].path;
-//   const width = widthInput.value;
-//   const height = heightInput.value;
+  // Electron adds a bunch of extra properties to the file object including the path
+  const imgPath = img.files[0].path;
+  const width = widthInput.value;
+  const height = heightInput.value;
 
-//   ipcRenderer.send('image:resize', {
-//     imgPath,
-//     height,
-//     width,
-//   });
-// }
+  ipcRenderer.send('image:resize', {
+    imgPath,
+    height,
+    width,
+  });
+}
 
-// // When done, show message
-// ipcRenderer.on('image:done', () =>
-//   alertSuccess(`Image resized to ${heightInput.value} x ${widthInput.value}`)
-// );
+// When done, show message
+ipcRenderer.on('image:done', () =>
+  alertSuccess(`Image resized to ${heightInput.value} x ${widthInput.value}`)
+);
 
 function alertSuccess(message) {
   Toastify.toast({
