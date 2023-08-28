@@ -27,10 +27,6 @@ function createAboutWindow() {
     height: 300,
   });
 
-  if(isDev) {
-    aboutWindow.webContents.openDevTools();
-  }
-
   aboutWindow.loadFile(path.join(__dirname, './renderer/about.html'));
 
 }
@@ -58,6 +54,7 @@ const menu = [
     submenu: [
       {
         label: 'About',
+        click: createAboutWindow
       }
     ]
   }] : []),
@@ -69,6 +66,7 @@ const menu = [
     submenu: [
       {
         label: 'About',
+        click: createAboutWindow
       }
     ]
   }] : [] )
